@@ -1,0 +1,40 @@
+//escopo global
+var altura = 0
+var largura = 0
+
+function telaDoJogo(){//escopo da função
+
+     altura = window.innerHeight//sendo o escopo da função nao recebera a palavra resevada (var)
+     largura = window.innerWidth
+//altura e largura da minha tela
+    console.log(largura, altura)
+}
+
+
+telaDoJogo()
+
+
+//posição Randomica do personagem 
+
+function positionRandom(){//função Criada com o Obejetivo de corrigir o erro de precedencia do html entre o script e o body sendo chamado com o document.body 
+
+    var positionX = Math.floor(Math.random() * largura) - 90//Decrementado o valor para a imagem n ultrapassar o tamanho da tela n criar a barra de rolagem
+    var positionY = Math.floor(Math.random() * altura) - 90
+
+    positionX = positionY < 0 ? 0 : positionX //Evitando que a posição seja menor que zero 0 da imagem deviso ao decremento - 90
+    positionY = positionX < 0 ? 0 : positionY
+
+    console.log(positionX,positionY)
+
+//criando o elemento html utilizando o Dom
+
+    var mosca = document.createElement('img')//criando elementos 
+    mosca.src = 'imagens/mosca.png'//incluindo a imagem de forma progamatica
+    mosca.className = 'mosca1'
+    mosca.style.left = positionX + 'px'
+    mosca.style.top = positionY + 'px'
+    mosca.style.position = 'absolute'
+
+    document.body.appendChild(mosca)//acessando o bady da pagina e adcionado um filho
+
+}
