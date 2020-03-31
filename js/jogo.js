@@ -30,11 +30,29 @@ function positionRandom(){//função Criada com o Obejetivo de corrigir o erro d
 
     var mosca = document.createElement('img')//criando elementos 
     mosca.src = 'imagens/mosca.png'//incluindo a imagem de forma progamatica
-    mosca.className = 'mosca1'
+    mosca.className = tamAleatorio()
     mosca.style.left = positionX + 'px'
     mosca.style.top = positionY + 'px'
     mosca.style.position = 'absolute'
 
     document.body.appendChild(mosca)//acessando o bady da pagina e adcionado um filho
 
+
+}
+
+function tamAleatorio(){
+    var classe = Math.floor(Math.random() * 3)// resultado sera entre 0 e proximo de 3
+    
+
+    if(classe == 0){
+        return 'mosca1'// não precisa do break pois o retun é a ultimo intrução da função quando o intepretador ler a intrução o processamento da funçao sera interompida 
+    }
+
+    if(classe == 1){
+        return 'mosca2'
+    }
+
+    if(classe == 2){
+        return 'mosca3'
+    }
 }
