@@ -30,7 +30,7 @@ function positionRandom(){//função Criada com o Obejetivo de corrigir o erro d
 
     var mosca = document.createElement('img')//criando elementos 
     mosca.src = 'imagens/mosca.png'//incluindo a imagem de forma progamatica
-    mosca.className = tamAleatorio()
+    mosca.className = tamAleatorio() + ' ' + ladoAlado()//Chamando a função como complemento para a classe
     mosca.style.left = positionX + 'px'
     mosca.style.top = positionY + 'px'
     mosca.style.position = 'absolute'
@@ -55,4 +55,19 @@ function tamAleatorio(){
     if(classe == 2){
         return 'mosca3'
     }
+}
+
+function ladoAlado(){
+    var classe = Math.floor(Math.random() * 2)
+    
+
+    if(classe == 0){
+        return 'ladoA'
+    }
+
+    if(classe == 1){
+        return 'ladoB'
+    }
+
+
 }
