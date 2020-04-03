@@ -18,6 +18,11 @@ telaDoJogo()
 
 function positionRandom(){//função Criada com o Obejetivo de corrigir o erro de precedencia do html entre o script e o body sendo chamado com o document.body 
 
+    //Remover a mosca anterior (caso exista)
+    if(document.getElementById('mosca')){ // com esse teste o java script tera inteligencia e reconhecer que é true
+    document.getElementById('mosca').remove()
+}
+
     var positionX = Math.floor(Math.random() * largura) - 90//Decrementado o valor para a imagem n ultrapassar o tamanho da tela n criar a barra de rolagem
     var positionY = Math.floor(Math.random() * altura) - 90
 
@@ -34,6 +39,7 @@ function positionRandom(){//função Criada com o Obejetivo de corrigir o erro d
     mosca.style.left = positionX + 'px'
     mosca.style.top = positionY + 'px'
     mosca.style.position = 'absolute'
+    mosca.id = 'mosca' 
 
     document.body.appendChild(mosca)//acessando o bady da pagina e adcionado um filho
 
