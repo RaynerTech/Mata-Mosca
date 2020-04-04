@@ -9,12 +9,12 @@
 
 </head>
 <body onresize="telaDoJogo()">
-    <img class="mosca1" src="imagens/mosca.png" alt="">
+    
      <div class="hud">
         <div class="life">
-            <img src="imagens/coracao_vazio.png" alt="">
-            <img src="imagens/coracao_cheio.png" alt="">
-            <img src="imagens/coracao_cheio.png" alt="">
+            <img id="l1" src="imagens/coracao_cheio.png" alt="">
+            <img id="l2" src="imagens/coracao_cheio.png" alt="">
+            <img id="l3"src="imagens/coracao_cheio.png" alt="">
 
         </div><!--life-->
         <div class="cronomentro">Tempo restante: ?  </div>
@@ -27,7 +27,7 @@
 
     setInterval(function(){
         positionRandom()
-    }, 1000)
+    }, 2000)
     //essa funçao sera responsavel por excutar a chamada do metodo 
     //posição randomica
 </script>

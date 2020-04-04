@@ -1,6 +1,7 @@
 //escopo global
 var altura = 0
 var largura = 0
+var lifes = 1
 
 function telaDoJogo(){//escopo da função
 
@@ -21,6 +22,14 @@ function positionRandom(){//função Criada com o Obejetivo de corrigir o erro d
     //Remover a mosca anterior (caso exista)
     if(document.getElementById('mosca')){ // com esse teste o java script tera inteligencia e reconhecer que é true
     document.getElementById('mosca').remove()
+//console.log('Elemento selecionado Foi: v' +  lifes)
+if(lifes > 3){
+    alert('Interromper o Jogo (Game Over) ')
+}else{
+document.getElementById('l' + lifes).src="imagens/coracao_vazio.png"
+
+    lifes++ //incrementando mais uma unidade na variavel vidas para deixar o elemento html dinamico
+}
 }
 
     var positionX = Math.floor(Math.random() * largura) - 90//Decrementado o valor para a imagem n ultrapassar o tamanho da tela n criar a barra de rolagem
@@ -39,7 +48,12 @@ function positionRandom(){//função Criada com o Obejetivo de corrigir o erro d
     mosca.style.left = positionX + 'px'
     mosca.style.top = positionY + 'px'
     mosca.style.position = 'absolute'
-    mosca.id = 'mosca' 
+    mosca.id = 'mosca'
+    mosca.onclick = function(){
+        this.remove()
+//usando a função remove terei que idicar o elemento que será removido então podemos usar o -
+//Operador this pq ele faz referencia ao proprio elemento html(mosca) que executa a função
+    }
 
     document.body.appendChild(mosca)//acessando o bady da pagina e adcionado um filho
 
