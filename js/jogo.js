@@ -24,12 +24,16 @@ function positionRandom(){//função Criada com o Obejetivo de corrigir o erro d
     document.getElementById('mosca').remove()
 //console.log('Elemento selecionado Foi: v' +  lifes)
 if(lifes > 3){
-    alert('Interromper o Jogo (Game Over) ')
+    
+
+    window.location.href = 'fim_jogo.html'
 }else{
 document.getElementById('l' + lifes).src="imagens/coracao_vazio.png"
 
-    lifes++ //incrementando mais uma unidade na variavel vidas para deixar o elemento html dinamico
+    lifes++ 
+//incrementando mais uma unidade na variavel vidas para deixar o elemento html dinamico
 }
+
 }
 
     var positionX = Math.floor(Math.random() * largura) - 90//Decrementado o valor para a imagem n ultrapassar o tamanho da tela n criar a barra de rolagem
