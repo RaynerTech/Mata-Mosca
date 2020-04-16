@@ -21,7 +21,7 @@ var stopwatch = setInterval(function(){
     if(time < 0){
         clearInterval(stopwatch)//Limpar essa função da memoria
         clearInterval(createMosca) 
-        alert('Vitoria')
+        window.location.href = 'victory.html'
     }else{
     document.getElementById('stopwatch').innerHTML = time
     }
