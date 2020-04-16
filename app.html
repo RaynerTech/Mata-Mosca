@@ -17,16 +17,16 @@
             <img id="l3"src="imagens/coracao_cheio.png" alt="">
 
         </div><!--life-->
-        <div class="cronomentro">Tempo restante: ?  </div>
+        <div class="cronomentro">Tempo restante: <span id="stopwatch"></span></div>
 
 
      </div><!--hud--> 
 
 <script>
    
+    document.getElementById('stopwatch').innerHTML = time
 
-
-    setInterval(function(){
+    var createMosca = setInterval(function(){
         positionRandom()
     }, 2000)
     //essa funçao sera responsavel por excutar a chamada do metodo 

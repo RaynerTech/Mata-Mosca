@@ -2,6 +2,7 @@
 var altura = 0
 var largura = 0
 var lifes = 1
+var time = 11
 
 function telaDoJogo(){//escopo da função
 
@@ -13,6 +14,18 @@ function telaDoJogo(){//escopo da função
 
 
 telaDoJogo()
+
+var stopwatch = setInterval(function(){
+    time = time - 1
+
+    if(time < 0){
+        clearInterval(stopwatch)//Limpar essa função da memoria
+        clearInterval(createMosca) 
+        alert('Vitoria')
+    }else{
+    document.getElementById('stopwatch').innerHTML = time
+    }
+}, 1000)
 
 
 //posição Randomica do personagem 
