@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gamer</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css'>
+<link rel="stylesheet" href="css/style.css">
+
+<script>
+
+function startGame(){
+    var level = document.getElementById('level').value
+     
+    if(level === ''){
+        alert('Selecione um nível para iniciar um jogo')
+        return false
+    }
+    alert(level)
+ }
+
+</script>
+
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+
+    <div class="container center">
+        <div class="row">
+            
+            <div class="col s12 ">
+                
+                    <img src="imagens/game.png" alt="">
+                </div>
+            </div>
+    
+            <div class="input-field col s12">
+                <select class="blue" id="level" >
+                <option style="color:red;" value="" disabled selected>Selecione o nível</option>
+                <option value="normal">Normal</option>
+                <option value="dificil">Dificil</option>
+                <option value="stevenseagal">Steven Seagal</option>
+                </select>
+                <label style="color:black;">Dificuldade</label>
+                </div>
+
+            <div class="row">
+            
+                <div class="col s12 ">
+                    <a  class="red darken-3 btn" onclick="startGame()">
+                        Start</a>
+                    </div>
+                </div>
+    
+    
+        </div>
+
+
+
+
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js'></script>
+<script id="rendered-js">
+$(document).ready(function () {
+  $('select').material_select();
+});
+//# sourceURL=pen.js
+    </script>
+</body>
+</html>
