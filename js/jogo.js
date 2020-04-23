@@ -4,6 +4,23 @@ var largura = 0
 var lifes = 1
 var time = 11
 
+var moscaTime = 1500
+
+var level = (window.location.search)
+//var level = (window.location.href)
+level = level.replace('?', '')
+
+if(level === 'normal'){
+     moscaTime = 1500
+
+    //1500
+}else if(level === 'dificil'){
+     moscaTime = 1000
+    //1000
+}else if(level === 'stevenseagal'){
+    moscaTime = 750
+    //750
+}
 function telaDoJogo(){//escopo da função
 
      altura = window.innerHeight//sendo o escopo da função nao recebera a palavra resevada (var)
