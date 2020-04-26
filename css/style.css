@@ -7,12 +7,14 @@
 }
 
 html{
-    cursor:url(../imagens/mosca.png)30 30, auto;
+  cursor: url(../imagens/mata_mosca.cur)30 30,auto;  
 }
 
 body{
     background-image:url(../imagens/bg.png);
     background-repeat:no-repeat;
+   
+
 }
 
 .mosca1{
